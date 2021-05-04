@@ -8,7 +8,7 @@
 [How to Develop](#how-to-develop)
 
 ## DESCRIPTION
-In this repository is a web application that allows a user to select a merchant of choice, then visit their website. It provides a set of two filters, one that allows a user to select a category of card as well as a general text search for
+In this repository is a web application that allows a user to select a merchant of choice, then visit their website. It provides a set of two filters, one that allows a user to select a category of card, as well as a general text search for the merchant's name. A list of merchants are provided by a third party RESTful API.
 
 ## HOW TO USE
 
