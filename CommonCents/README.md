@@ -12,6 +12,31 @@ Recommended Tools:
 
 Run `npm install` in the /CommonCents folder to install node module dependencies.
 
+This project uses the [NG-ZORRO component library](https://ng.ant.design/docs/introduce/en). 
+
+## Project structure
+
+* /app - Entry point component, modules, and routing.
+ * /components - Application components
+ * /interfaces - Interfaces and object models
+ * /pages - Higher order components representing a page
+ * /pipes - Transformation pipes.
+ * /services - Data services
+
+Each of these paths are declared in the `tsconfig.json` compiler options. This allows imports to be referenced from these base path names. For example, `import { Merchant } from 'interfaces/merchant';`
+
+```
+    "paths": {
+      "interfaces/*": ["src/app/interfaces/*"],
+      "components/*": ["src/app/components/*"],
+      "pages/*": ["src/app/pages/*"],
+      "services/*": ["src/app/services/*"],
+      "pipes/*": ["src/app/pipes/*"]
+    }
+```
+
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
