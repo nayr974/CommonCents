@@ -17,11 +17,11 @@ This project uses the [NG-ZORRO component library](https://ng.ant.design/docs/in
 ## Project structure
 
 * /app - Entry point component, modules, and routing.
- * /components - Application components
- * /interfaces - Interfaces and object models
- * /pages - Higher order components representing a page
- * /pipes - Transformation pipes.
- * /services - Data services
+	* /components - Application components
+	* /interfaces - Interfaces and object models
+	* /pages - Higher order components representing a page
+	* /pipes - Transformation pipes.
+	* /services - Data services
 
 Each of these paths are declared in the `tsconfig.json` compiler options. This allows imports to be referenced from these base path names. For example, `import { Merchant } from 'interfaces/merchant';`
 
