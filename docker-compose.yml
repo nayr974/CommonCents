@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  nginx-angular:
+    container_name: commoncents
+    build:
+        context: commoncents/
+    command: "nginx -g 'daemon off;'"
+    restart: always
+    ports:
+      - "80:80"
+    expose:
+      - "80"
+    networks:
+      - commoncents
+
+volumes:
+  local_postgres_data: 
+
+networks:
+  commoncents:
+    driver: bridge
