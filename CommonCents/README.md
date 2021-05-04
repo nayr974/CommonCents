@@ -10,6 +10,8 @@ Recommended Tools:
 	Visual Studio Code, as a general development environment
 	Postman, for testing any APIs
 
+Run `npm install` in the /CommonCents folder to install node module dependencies.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
