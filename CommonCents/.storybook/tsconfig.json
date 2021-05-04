@@ -1,0 +1,27 @@
+{
+  "extends": "../tsconfig.app.json",
+  "compilerOptions": {
+    "types": [
+      "node"
+    ],
+    "paths": {
+      "interfaces/*": [ "src/app/interfaces/*" ],
+      "components/*": [ "src/app/components/*" ],
+      "pages/*": [ "src/app/pages/*" ],
+      "services/*": [ "src/app/services/*" ], 
+      "pipes/*": [ "src/app/pipes/*" ],
+    }
+  },
+  "exclude": [
+    "../src/test.ts",
+    "../src/**/*.spec.ts",
+    "../projects/**/*.spec.ts"
+  ],
+  "include": [
+    "../src/**/*",
+    "../projects/**/*"
+  ],
+  "files": [
+    "./typings.d.ts"
+  ]
+}

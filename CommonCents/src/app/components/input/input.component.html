@@ -1,0 +1,25 @@
+<nz-skeleton *ngIf="loading" [nzParagraph]="{ rows: 0 }"></nz-skeleton>
+<ng-container *ngIf="!loading">
+  <nz-input-group [nzSuffix]="clearInputButton" [nzPrefix]="searchIcon">
+    <input
+      type="text"
+      nz-input
+      [ngModel]="value"
+      (ngModelChange)="onSelectedValueChange($event)"
+      [placeholder]="placeholder"
+    />
+  </nz-input-group>
+  <ng-template #searchIcon>
+    <i nz-icon nzType="search"></i>
+  </ng-template>
+  <ng-template #clearInputButton>
+    <i
+      nz-icon
+      class="ant-input-clear-icon"
+      nzTheme="fill"
+      nzType="close-circle"
+      *ngIf="value"
+      (click)="onSelectedValueChange('')"
+    ></i>
+  </ng-template>
+</ng-container>

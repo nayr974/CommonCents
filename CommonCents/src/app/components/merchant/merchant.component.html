@@ -1,0 +1,74 @@
+<ng-container>
+  <nz-card>
+    <div
+      nz-row
+      [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32 }"
+      nzJustify="space-around"
+      nzAlign="middle"
+    >
+      <div nz-col class="gutter-row" nzXs="4" nzMd="6" nzLg="6">
+        <div class="inner-box">
+          <img
+            *ngIf="!loading"
+            nz-image
+            width="100%"
+            [nzSrc]="merchant?.image || ''"
+            [nzFallback]="fallbackImage"
+          />
+          <nz-skeleton-element
+            *ngIf="loading"
+            nzType="image"
+          ></nz-skeleton-element>
+        </div>
+      </div>
+      <div nz-col class="gutter-row" [nzSpan]="16">
+        <div class="inner-box">
+          <div nz-row>
+            <div nz-col class="gutter-row" [nzSpan]="24">
+              <div class="inner-box">
+                <span nz-typography *ngIf="!loading"
+                  ><strong>{{ merchant?.name }}</strong></span
+                >
+                <nz-skeleton
+                  *ngIf="loading"
+                  [nzParagraph]="{ rows: 0 }"
+                ></nz-skeleton>
+              </div>
+            </div>
+          </div>
+          <div nz-row>
+            <div nz-col class="gutter-row" [nzSpan]="24">
+              <div class="inner-box">
+                <span nz-typography *ngIf="!loading"
+                  >{{ merchant?.minAmount | currency }} -
+                  {{ merchant?.maxAmount | currency }}</span
+                >
+                <nz-skeleton
+                  *ngIf="loading"
+                  [nzParagraph]="{ rows: 0 }"
+                ></nz-skeleton>
+              </div>
+            </div>
+          </div>
+          <div nz-row *ngIf="merchant?.website">
+            <div nz-col class="gutter-row" [nzSpan]="24">
+              <div class="inner-box">
+                <a
+                  nz-button
+                  nzType="link"
+                  [href]="merchant?.website"
+                  *ngIf="!loading"
+                  >view website</a
+                >
+                <nz-skeleton
+                  *ngIf="loading"
+                  [nzParagraph]="{ rows: 0 }"
+                ></nz-skeleton>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nz-card>
+</ng-container>

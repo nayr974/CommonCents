@@ -1,0 +1,10 @@
+<nz-skeleton *ngIf="loading" [nzParagraph]="{ rows: 0 }"></nz-skeleton>
+<ng-container *ngIf="!loading">
+  <nz-select
+    [ngModel]="selectedValue"
+    (ngModelChange)="onSelectedValueChange($event)"
+    [nzOptions]="options"
+    [nzAllowClear]="true"
+    [nzPlaceHolder]="placeholder"
+  ></nz-select>
+</ng-container>

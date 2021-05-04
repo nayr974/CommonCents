@@ -1,0 +1,62 @@
+<div nz-row>
+  <div nz-col [nzSpan]="24">
+    <div class="inner-box">
+      <app-select
+        [loading]="loading"
+        (selectedValueChange)="setCategory($event)"
+        [options]="options"
+        placeholder="Filter by Category"
+      ></app-select>
+    </div>
+  </div>
+</div>
+<div nz-row>
+  <div nz-col [nzSpan]="24">
+    <div class="inner-box">
+      <app-input
+        [loading]="loading"
+        (selectedValueChange)="setSearchText($event)"
+        placeholder="Search"
+      ></app-input>
+    </div>
+  </div>
+</div>
+<div nz-row class="merchant-list" [nzGutter]="[12, 12]">
+  <ng-container *ngIf="!loading">
+    <!-- First approach using a pipe to filter element collection directly. Performance is not great.
+        <div nz-col class="gutter-row" [nzSpan]="24" *ngFor="let merchant of merchantList | callback: showMerchant; trackBy:trackFunction " >
+            <div class="inner-box">
+                <app-merchant [merchant]="merchant"></app-merchant>
+            </div>
+        </div> -->
+
+    <!-- Second approach using a conditional class to hide elements that do not match. Performance is better. -->
+    <ng-container *ngFor="let merchant of merchantList; trackBy: trackFunction">
+      <div
+        nz-col
+        class="gutter-row"
+        [nzSpan]="24"
+        [ngClass]="{ hidden: !showMerchant(merchant) }"
+      >
+        <div class="inner-box">
+          <app-merchant [merchant]="merchant"></app-merchant>
+        </div>
+      </div>
+    </ng-container>
+
+    <!-- Another approach could be to use a filtered collection on the model, which would be updated when the search
+             or filter criteria changes. This would give additional, potentially useful, properties such as a count of 
+             the merchants that meet the search and filter criteria. -->
+  </ng-container>
+  <ng-container *ngIf="loading">
+    <div nz-col class="gutter-row" [nzSpan]="24">
+      <app-merchant [loading]="true"></app-merchant>
+    </div>
+    <div nz-col class="gutter-row" [nzSpan]="24">
+      <app-merchant [loading]="true"></app-merchant>
+    </div>
+    <div nz-col class="gutter-row" [nzSpan]="24">
+      <app-merchant [loading]="true"></app-merchant>
+    </div>
+  </ng-container>
+</div>
