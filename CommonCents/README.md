@@ -3,12 +3,12 @@
 To add your two cents to the Common Cents component, install the following dependencies and recommended tools:
 
 Dependencies:
-	Node.js 14+
-	Angular 11 CLI
+* Node.js 14+
+* Angular 11 CLI
 
 Recommended Tools:
-	Visual Studio Code, as a general development environment
-	Postman, for testing any APIs
+* Visual Studio Code, as a general development environment
+* Postman, for testing any APIs
 
 Run `npm install` in the /CommonCents folder to install node module dependencies.
 
