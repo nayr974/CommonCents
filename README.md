@@ -12,7 +12,7 @@ In this repository is a web application that allows a user to select a merchant 
 
 ## HOW TO USE
 
-Install docker, then clone a copy of the code from this repository and execute the following command in the CommonCents folder:
+Install docker, then clone a copy of the code from this repository and execute the following command in the cloned folder:
 
 	docker-compose up --build
 
